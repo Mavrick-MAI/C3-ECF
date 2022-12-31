@@ -474,3 +474,23 @@ function updateEmployee(id) {
     alert("Tout les champs doivent être renseignés !! ");
   }
 }
+
+// Récupère le bouton pour remonter en haut de la page
+let backToTopButton = document.getElementById("backToTop");
+
+// Ramène en haut de la page
+function backToTop() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+// Affiche le bouton quand on scroll 100px vers le bas sinon le cache 
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+}
+
+window.onscroll = function() {scrollFunction()};
