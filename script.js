@@ -48,6 +48,7 @@ function getListEmployee() {
         // Créer un bouton pour modifier les informations de l'employé
         let modifButton = document.createElement("button");
         modifButton.type = "button";
+        modifButton.title = "Modifier l'employé";
         modifButton.innerText = "Modifier";
         modifButton.className ="btn btn-secondary";
         modifButton.addEventListener("click", () => {
@@ -57,6 +58,7 @@ function getListEmployee() {
         // Créer un bouton pour supprimer l'employé
         let supprButton = document.createElement("button");
         supprButton.type = "button";
+        supprButton.title = "Supprimer l'employé"
         supprButton.innerText = "Supprimer";
         supprButton.className = "btn btn-danger mt-2";
         supprButton.addEventListener("click", () => {
@@ -171,6 +173,7 @@ addEmployeeBtn.addEventListener("click", () => {
 
   addButton = document.createElement("button");
   addButton.setAttribute("type", "button");
+  addButton.title = "Ajouter l'employé";
   addButton.innerText = "Ajouter";
   addButton.id = "addButton";
   addButton.className = "btn btn-primary fs-4";
@@ -338,6 +341,7 @@ function getEmployee(id) {
   validateButton = document.createElement("button");
   validateButton.setAttribute("type", "button");
   validateButton.innerText = "Valider";
+  validateButton.title = "Valider la modification";
   validateButton.id = "validateButton";
   validateButton.className = "btn btn-primary fs-4";
   validateButton.addEventListener("click", () => {
