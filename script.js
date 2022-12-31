@@ -95,6 +95,7 @@ function getListEmployee() {
         // Affiche une image d'erreur
         let errorImage = document.createElement("img");
         errorImage.src = "./images/404error.png";
+        errorImage.alt = "404 error - Server down"
 
         // Affiche un texte d'erreur
         let errorMessage = document.createElement("h1");
