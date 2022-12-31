@@ -127,6 +127,18 @@ let closeModalBtn = document.getElementsByClassName("close")[0];
 // Récupère le contenu de la modale
 let modalContent = document.getElementsByClassName("modalContent")[0];
 
+// Ferme la modale lors d'un clic sur le "X" en haut à droite
+closeModalBtn.onclick = function () {
+  modal.style.display = "none";
+};
+
+// Ferme la modale lors d'un clic en dehors de la modale
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
 // Evénement qui adapte la modale et l'affiche
 addEmployeeBtn.addEventListener("click", () => {
 
@@ -172,18 +184,6 @@ addEmployeeBtn.addEventListener("click", () => {
   // Affiche la modale
   modal.style.display = "block";
 });
-
-// Ferme la modale lors d'un clic sur le "X" en haut à droite
-closeModalBtn.onclick = function () {
-  modal.style.display = "none";
-};
-
-// Ferme la modale lors d'un clic en dehors de la modale
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
 
 // Fonction qui insère un nouvel employé dans l'API
 function createNewEmployee() {

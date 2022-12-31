@@ -23,7 +23,7 @@
   
   /* Le bouton de fermeture de la modale ("X") */
   .close {
-    color: #aaa;
+    
     float: right;
     font-size: 28px;
     font-weight: bold;
