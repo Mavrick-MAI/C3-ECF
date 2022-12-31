@@ -1,85 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ECF - API Employés</title>
-    <link rel="stylesheet" href="style.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
-<body id="body">
-    
-    <div class="row" >
+    <!-- Lien du CSS personnalisé -->
+    <link rel="stylesheet" href="style.css" />
 
+    <!-- Lien du CSS Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body id="body">
+    <main>
+      <div class="row">
         <!-- Bouton pour rafrachir la liste des employés -->
-        <button type="button" onclick="getListEmployee()" class="btn btn-primary fs-4">Rafraichir la liste</button>
-    
+        <button type="button" onclick="getListEmployee()" class="btn btn-primary fs-4">
+          Rafraichir la liste
+        </button>
+
         <!-- Bouton pour ajouter un employé -->
-        <button type="button" id="addEmployee" class="btn btn-success fs-4">Ajouter un employé</button>
-    </div>
+        <button type="button" id="addEmployee" class="btn btn-success fs-4">
+          Ajouter un employé
+        </button>
+      </div>
 
-    <!-- Tableau qui va contenir la liste des employés -->
-    <table class="table table-responsive table-striped table-bordered align-middle border-dark text-center">
+      <!-- Tableau qui va contenir la liste des employés -->
+      <table class="table table-responsive table-striped table-bordered align-middle border-dark text-center">
         <thead>
-            <tr class="table-info table-bordered border-dark">
-                <th scope="col">PRENOM</th>
-                <th scope="col">NOM</th>
-                <th scope="col">POSTE</th>
-                <th scope="col">EMAIL</th>
-                <th scope="col">ID</th>
-                <th scope="col">ACTIONS</th>
-            </tr>
+          <tr class="table-info table-bordered border-dark">
+            <th scope="col">PRENOM</th>
+            <th scope="col">NOM</th>
+            <th scope="col">POSTE</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">ID</th>
+            <th scope="col">ACTIONS</th>
+          </tr>
         </thead>
-        <tbody id="listEmployee" class="table-group-divider">
-        </tbody>
-    </table>
+        <tbody id="listEmployee" class="table-group-divider"></tbody>
+      </table>
 
-
-    <!-- Modale utilisée pour l'insertion et la modification d'un employé -->
-    <div id="myModal" class="modal">
+      <!-- Modale utilisée pour l'insertion et la modification d'un employé -->
+      <div id="myModal" class="modal">
 
         <!-- Contenu de la modale -->
         <div class="modalContent container">
-            
-            <!-- "X" en haut à droite pour fermer la modale -->
-            <span class="close fs-1">&times;</span>
 
-            <!-- Titre de la modale -->
-            <h1 id="title" class="text-center mb-5">Modal</h1>
+          <!-- "X" en haut à droite pour fermer la modale -->
+          <span class="close fs-1">&times;</span>
 
-            <!-- Formulaire d'insertion ou de modification d'un employé -->
-            <form>
-                <fieldset>
-                    <div class="text-center">
-                        <legend>Veuillez entrer vos informations</legend>
-                    </div>
+          <!-- Titre de la modale -->
+          <h1 id="title" class="text-center mb-5">Modal</h1>
 
-                    <div class="row mb-3">
-                        <div class="col-6">
-                            <label for="firstName" class="form-label fs-4 ms-5">Prénom</label>
-                            <input type="text" name="firstName" id="firstName" class="form-control col-5" placeholder="First Name" required>
-                        </div>
-                        <div class="col-6">
-                            <label for="lastName" class="form-label fs-4 ms-5">Nom</label>
-                            <input type="text" name="lastName" id="lastName" class="form-control col-5" placeholder="Last Name" required>
-                        </div>
-                    </div>
-                    <div class="mb-1">
-                        <label for="jobTitle" class="form-label fs-4 ms-5">Poste</label>
-                        <input type="text" name="jobTitle" id="jobTitle" class="form-control col-5" placeholder="Job Title" required><br>
-                    </div>
-                    <div class="mb-1">
-                        <label for="email" class="form-label fs-4 ms-5">Email</label>
-                        <input type="email" id="email" name="email" class="form-control col-5" placeholder="Email" required><br>
-                    </div>     
-                </fieldset>
-            </form>       
+          <!-- Formulaire d'insertion ou de modification d'un employé -->
+          <form>
+            <fieldset>
+              <div class="text-center">
+                <legend>Veuillez entrer vos informations</legend>
+              </div>
+
+              <!-- Input du nom et du prénom -->
+              <div class="row mb-3">
+                <div class="col-6">
+                  <label for="firstName" class="form-label fs-4 ms-5">
+                    Prénom
+                    </label>
+                  <input type="text" name="firstName" id="firstName" class="form-control col-5" placeholder="First Name" required/>
+                </div>
+
+                <div class="col-6">
+                  <label for="lastName" class="form-label fs-4 ms-5">
+                    Nom
+                  </label>
+                  <input type="text" name="lastName" id="lastName" class="form-control col-5" placeholder="Last Name" required/>
+                </div>
+              </div>
+
+              <!-- Input du poste -->
+              <div class="mb-3">
+                <label for="jobTitle" class="form-label fs-4 ms-5">
+                    Poste
+                </label>
+                <input type="text" name="jobTitle" id="jobTitle" class="form-control col-5" placeholder="Job Title" required/>
+              </div>
+
+              <!-- Input de l'email -->
+              <div class="mb-3">
+                <label for="email" class="form-label fs-4 ms-5">
+                    Email
+                </label>
+                <input type="email" id="email" name="email" class="form-control col-5" placeholder="Email" required/>
+              </div>
+            </fieldset>
+          </form>
         </div>
-    </div>
+      </div>
+    </main>
 
     <!-- Script Javascript -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
