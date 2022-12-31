@@ -198,22 +198,12 @@ function createNewEmployee() {
   if (firstName != "" && lastName != "" && jobTitle != "" && email != "") {
 
     // Définition des patterns pour vérifier le format des inputs
-    let textInputPattern = /^[A-Za-z]+$/;
     let emailInputPattern = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}$/;
 
     // Préparation du message d'erreur
     let errorInput = "";
 
     // Vérifie que chaque input est conforme au pattern et concatène un string dans le message d'erreur
-    if(!textInputPattern.test(firstName)) {
-      errorInput += "- Le prénom ne doit contenir que des lettres !\n";
-    }
-    if(!textInputPattern.test(lastName)) {
-      errorInput += "- Le nom ne doit contenir que des lettres !\n";
-    }
-    if(!textInputPattern.test(jobTitle)) {
-      errorInput += "- Le poste ne doit contenir que des lettres !\n";
-    }
     if(!emailInputPattern.test(email)) {
       errorInput += "- Email invalide. Ex : monAdresse@email.com !\n";
     }
