@@ -18,6 +18,9 @@
     />
   </head>
   <body id="body">
+    <header class="text-center p-4">
+        <h1 class="display-3">SocaDev - Liste des employés</h1>
+    </header>
     <main>
       <div class="row">
         <!-- Bouton pour rafrachir la liste des employés -->
@@ -56,26 +59,26 @@
           <span class="close fs-1">&times;</span>
 
           <!-- Titre de la modale -->
-          <p id="title" class="text-center mb-5 display-3">Modal</p>
+          <h1 id="title" class="text-center mb-4">Modal</h1>
 
           <!-- Formulaire d'insertion ou de modification d'un employé -->
           <form>
             <fieldset>
               <div class="text-center">
-                <legend class="display-5">Veuillez entrer vos informations</legend>
+                <legend class="fs-2 mb-4">Veuillez entrer vos informations</legend>
               </div>
 
               <!-- Input du nom et du prénom -->
               <div class="row mb-3">
                 <div class="col-6">
-                  <label for="firstName" class="form-label fs-4 ms-5">
+                  <label for="firstName" class="form-label fs-4 ms-3">
                     Prénom
                     </label>
                   <input type="text" name="firstName" id="firstName" class="form-control col-5" placeholder="First Name" required/>
                 </div>
 
                 <div class="col-6">
-                  <label for="lastName" class="form-label fs-4 ms-5">
+                  <label for="lastName" class="form-label fs-4 ms-3">
                     Nom
                   </label>
                   <input type="text" name="lastName" id="lastName" class="form-control col-5" placeholder="Last Name" required/>
@@ -84,7 +87,7 @@
 
               <!-- Input du poste -->
               <div class="mb-3">
-                <label for="jobTitle" class="form-label fs-4 ms-5">
+                <label for="jobTitle" class="form-label fs-4 ms-3">
                     Poste
                 </label>
                 <input type="text" name="jobTitle" id="jobTitle" class="form-control col-5" placeholder="Job Title" required/>
@@ -92,7 +95,7 @@
 
               <!-- Input de l'email -->
               <div class="mb-3">
-                <label for="email" class="form-label fs-4 ms-5">
+                <label for="email" class="form-label fs-4 ms-3">
                     Email
                 </label>
                 <input type="email" id="email" name="email" class="form-control col-5" placeholder="Email" required/>
